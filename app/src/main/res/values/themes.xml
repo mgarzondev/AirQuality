@@ -1,9 +1,33 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.AirQuality" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/primaryForeground</item>
+
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/secondaryForeground</item>
+
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorSurface">@color/card</item>
+        <item name="colorOnSurface">@color/foreground</item>
+
+        <item name="colorSurfaceVariant">@color/muted</item>
+        <item name="colorOnSurfaceVariant">@color/accentForeground</item>
+        <item name="colorOutline">@color/border</item>
+
+        <item name="textAppearanceBody1">@color/foreground</item>
+
+        <item name="cardElevation">@color/border</item>
+
+        <item name="colorError">@color/Destructive</item>
+        <item name="colorOnError">@color/card</item>
+
     </style>
 
     <style name="Theme.AirQuality" parent="Base.Theme.AirQuality" />
+
+    <style name="ShapeAppearance.AirQuality.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">20dp</item>
+    </style>
+
 </resources>

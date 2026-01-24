@@ -1,5 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.AirQuality" parent="Theme.Material3.DayNight.NoActionBar">
-         <item name="colorPrimary">@color/background</item>
+        <item name="colorPrimary">@color/Primary</item>
+        <item name="colorOnPrimary">@color/PrimaryForeground</item>
+
+        <item name="colorSecondary">@color/Secondary</item>
+        <item name="colorOnSecondary">@color/SecondaryForeground</item>
+
+        <item name="android:windowBackground">@color/Background</item>
+        <item name="colorSurface">@color/Card</item>
+        <item name="colorOnSurface">@color/Foreground</item>
+
+        <item name="colorSurfaceVariant">@color/Muted</item>
+        <item name="colorOnSurfaceVariant">@color/MutedForeground</item>
+        <item name="colorOutline">@color/Border</item>
+
+        <item name="colorError">@color/Destructive</item>
+        <item name="colorOnError">@color/card</item>
+
+        <item name="textAppearanceBody1">@color/Foreground</item>
+
+        <item name="cardElevation">@color/Border</item>
+
     </style>
 </resources>

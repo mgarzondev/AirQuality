@@ -9,5 +9,11 @@
     <string name="hola_estamos_en_favoritos">Hola estamos en Favoritos</string>
     <string name="hola_estamos_en_mapa">Hola estamos en Mapa</string>
     <string name="hola_estamos_en_historial">Hola estamos en Historial</string>
+    <string name="air_quality">Air Quality</string>
+    <string name="respira_con_confianza">Respira con confianza</string>
+    <string name="pa_s">País</string>
+    <string name="ahora">Ahora</string>
+    <string name="icono_time">Icono time</string>
+    <string name="AQI">AQI</string>
 
 </resources>
