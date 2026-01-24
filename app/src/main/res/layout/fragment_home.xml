@@ -1,13 +1,536 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:paddingEnd="25dp"
+    android:paddingStart="25dp"
+    >
+
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hola_estamos_en_inicio" />
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="25sp"
+        android:text="@string/air_quality"
+        android:textStyle="bold"
+        android:textColor="?attr/textAppearanceBody1"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="50dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15sp"
+        android:text="@string/respira_con_confianza"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonRefresh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:insetBottom="0dp"
+        android:insetLeft="0dp"
+        android:padding="0dp"
+        app:icon="@drawable/refresh"
+        android:gravity="center"
+        app:iconGravity="textStart"
+        android:insetRight="0dp"
+        android:insetTop="0dp"
+        app:iconTint="?attr/colorPrimary"
+        app:iconPadding="0dp"
+        app:backgroundTint="?attr/colorOutline"
+        app:cornerRadius="30dp"
+        tools:layout_editor_absoluteX="286dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintVertical_bias="0.04"
+        tools:layout_editor_absoluteY="27dp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectCountry"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.AirQuality.MediumComponent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="País"
+        app:startIconDrawable="@drawable/flag"
+        app:startIconTint="?attr/colorPrimary"
+        app:boxStrokeErrorColor="?attr/colorError"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/selectState"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintVertical_bias="0"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:labelFor="@+id/selectCountry"
+            android:paddingStart="50dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectState"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.AirQuality.MediumComponent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Estado"
+        app:startIconDrawable="@drawable/map_2"
+        app:startIconTint="?attr/colorPrimary"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectCountry"
+        app:layout_constraintBottom_toTopOf="@+id/containerLabel"
+        app:layout_constraintEnd_toStartOf="@+id/selectCity"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginEnd="8dp"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:paddingStart="50dp"
+            android:labelFor="@+id/selectState"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectCity"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.AirQuality.MediumComponent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ciudad"
+        app:startIconDrawable="@drawable/building_community"
+        app:startIconTint="?attr/colorPrimary"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/selectState"
+        app:layout_constraintTop_toTopOf="@+id/selectState"
+        app:layout_constraintBottom_toBottomOf="@+id/selectState"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:labelFor="@+id/selectCity"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerLabel"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/selectState"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/labelUb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:strokeWidth="0dp"
+            android:paddingRight="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/LabelTi"
+            android:backgroundTint="?attr/colorSurfaceVariant"
+            app:layout_constraintHorizontal_bias="0"
+           >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:id="@+id/iconLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:src="@drawable/map_pin"
+                    android:tint="?attr/colorPrimary"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/city"
+                    />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iconLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/country"
+                    android:text="Bogotá,"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="2dp"
+                    />
+
+                <TextView
+                    android:id="@+id/country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/city"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    android:text="Colombia"
+                    android:textSize="12sp"
+                    android:layout_marginStart="2dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/labelTi"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/labelUb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="5dp"
+            app:strokeColor="?attr/colorSurfaceVariant">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iconTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:src="@drawable/clock_hour_12"
+                    app:tint="?attr/colorPrimary"
+                    android:contentDescription="@string/icono_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textTime"
+                    />
+
+                <TextView
+                    android:id="@+id/textTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ahora"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/iconTime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="?attr/colorOutline"
+        android:layout_height="180dp"
+        android:backgroundTint="?attr/colorSurface"
+        app:layout_constraintBottom_toBottomOf="@+id/containerScroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerLabel"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textViewIndice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ÍNDICE AQI"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <TextView
+                android:id="@+id/numeroAQI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="42"
+                android:textColor="?attr/textAppearanceBody1"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewIndice"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIndice"
+                app:layout_constraintVertical_bias="0"
+
+                />
+
+            <TextView
+                android:id="@+id/AQI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AQI"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/numeroAQI"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.025"
+                app:layout_constraintStart_toEndOf="@+id/numeroAQI"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIndice"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:backgroundTint="?attr/cardElevation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/AQI"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                app:strokeColor="?attr/colorOutline"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/iconoLeaf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:contentDescription="Icono leaft"
+                    android:padding="12dp"
+                    android:src="@drawable/leaf"
+                    android:tint="?attr/colorPrimary" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.65">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pm25Card"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_goneMarginEnd="5dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeColor="?attr/colorOutline"
+                app:strokeWidth="1dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/pm10Card"
+                app:layout_constraintVertical_bias="0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerCardPm25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/iconCardPm25"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="?attr/colorOutline"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/iconoPm25"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="Icono leaf"
+                            android:padding="8dp"
+                            android:src="@drawable/leaf"
+                            app:tint="?attr/colorPrimary" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/textValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2.5"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pm10Card"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorOutline"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:layout_constraintBottom_toBottomOf="@id/pm25Card"
+                app:layout_constraintStart_toEndOf="@+id/pm25Card"
+                app:layout_constraintTop_toTopOf="@id/pm25Card"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/o3Card"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorOutline"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:layout_constraintTop_toBottomOf="@+id/pm25Card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/pm25Card"
+                app:layout_constraintEnd_toEndOf="@+id/pm25Card"
+                app:layout_constraintVertical_bias="0"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/noCard"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeColor="?attr/colorOutline"
+                app:strokeWidth="1dp"
+                app:layout_constraintTop_toTopOf="@+id/o3Card"
+                app:layout_constraintStart_toStartOf="@+id/pm10Card"
+                app:layout_constraintEnd_toEndOf="@+id/pm10Card"
+                app:layout_constraintBottom_toBottomOf="@+id/o3Card"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorOutline"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:layout_constraintTop_toBottomOf="@id/o3Card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

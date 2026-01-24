@@ -7,8 +7,27 @@
     <color name="secondary">#E3EFEE</color>
     <color name="secondaryForeground">#1C544E</color>
     <color name="muted">#ECF1F0</color>
+    <color name="mutedForeground">#567A77</color>
     <color name="accent">#D5E9E7</color>
     <color name="accentForeground">#154D47</color>
     <color name="card">#FFFFFF</color>
     <color name="border">#D8E5E4</color>
+    <!-- Modo Oscuro -->
+    <color name="Background">#0B1211</color>
+    <color name="Foreground">#F0F4F3</color>
+    <color name="Primary">#3AB8AC</color>
+    <color name="PrimaryForeground">#090F0E</color>
+    <color name="Secondary">#1E2E2C</color>
+    <color name="SecondaryForeground">#BCD6D3</color>
+    <color name="Muted">#1C2827</color>
+    <color name="MutedForeground">#7A9D99</color>
+    <color name="Accent">#213332</color>
+    <color name="AccentForeground">#C5E2DF</color>
+    <color name="Card">#111C1B</color>
+    <color name="Border">#2E4744</color>
+    <color name="Destructive">#D93636</color>
+
+   <!-- Colores de barra de navegación -->
+    <color name="active">#229E94</color>
+    <color name="desactive">#154D47</color>
 </resources>
