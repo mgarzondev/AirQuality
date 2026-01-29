@@ -15,5 +15,18 @@
     <string name="ahora">Ahora</string>
     <string name="icono_time">Icono time</string>
     <string name="AQI">AQI</string>
+    <string name="campo_para_seleccionar_pa_s">Campo para seleccionar país</string>
+    <string name="estado">Estado</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="icono_de_ubicaci_n_etiqueta_ubicaci_n">Icono de ubicación etiqueta ubicación</string>
+    <string name="bogot">Bogotá,</string>
+    <string name="colombia">Colombia</string>
+    <string name="ndice_aqi">ÍNDICE AQI</string>
+    <string name="_42">42</string>
+    <string name="icono_leaft">Icono leaft</string>
+    <string name="icono_leaf">Icono leaf</string>
+    <string name="_2_5">2.5</string>
+    <string name="recomendaciones">Recomendaciones</string>
+    <string name="boton_para_refrezcar_datos_a_tiempo_real">Boton para refrezcar datos a tiempo real</string>
 
 </resources>

@@ -1,4 +1,6 @@
 package com.mgarzondev.airquality.ui.history
 
-class historyViewModel {
+import androidx.lifecycle.ViewModel
+
+class historyViewModel: ViewModel() {
 }

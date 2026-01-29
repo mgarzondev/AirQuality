@@ -1,4 +1,6 @@
 package com.mgarzondev.airquality.ui.map
 
-class MapViewModel {
+import androidx.lifecycle.ViewModel
+
+class MapViewModel: ViewModel() {
 }

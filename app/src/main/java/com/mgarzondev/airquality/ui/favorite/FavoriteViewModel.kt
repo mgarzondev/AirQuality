@@ -1,4 +1,6 @@
 package com.mgarzondev.airquality.ui.favorite
 
-class FavoriteViewModel {
+import androidx.lifecycle.ViewModel
+
+class FavoriteViewModel: ViewModel() {
 }
