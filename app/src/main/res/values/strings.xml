@@ -28,5 +28,19 @@
     <string name="_2_5">2.5</string>
     <string name="recomendaciones">Recomendaciones</string>
     <string name="boton_para_refrezcar_datos_a_tiempo_real">Boton para refrezcar datos a tiempo real</string>
+    <string name="_0">0</string>
+    <string name="_50">50</string>
+    <string name="_100">100</string>
+    <string name="_150">150</string>
+    <string name="_200">200+</string>
+    <string name="_12">12</string>
+    <string name="pm2_5">PM2.5</string>
+    <string name="g_m">µg/m³</string>
+    <string name="pm10">PM10</string>
+    <string name="o">O₃</string>
+    <string name="ppb">ppb</string>
+    <string name="no">NO₂</string>
+    <string name="icono_de_recomendaci_n">Icono de recomendación</string>
+    <string name="air_quality_good">La calidad del aire es <b>buena</b>. Es un excelente momento para actividades al aire libre.</string>
 
 </resources>

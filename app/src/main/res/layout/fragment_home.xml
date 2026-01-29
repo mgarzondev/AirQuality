@@ -291,7 +291,7 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         app:strokeWidth="0dp"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:backgroundTint="?attr/colorSurface"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -381,20 +381,20 @@
                 android:id="@+id/tv0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/_0"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv50"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/numeroAQI"
-                app:layout_constraintVertical_bias="0.9" />
+                app:layout_constraintVertical_bias="1" />
 
             <TextView
                 android:id="@+id/tv50"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="50"
+                android:text="@string/_50"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 app:layout_constraintBottom_toBottomOf="@+id/tv0"
                 app:layout_constraintEnd_toStartOf="@+id/tv100"
@@ -405,7 +405,7 @@
                 android:id="@+id/tv100"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100"
+                android:text="@string/_100"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 app:layout_constraintBottom_toBottomOf="@+id/tv0"
                 app:layout_constraintEnd_toStartOf="@+id/tv150"
@@ -416,7 +416,7 @@
                 android:id="@+id/tv150"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="150"
+                android:text="@string/_150"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 app:layout_constraintBottom_toBottomOf="@+id/tv0"
                 app:layout_constraintEnd_toStartOf="@+id/tv200"
@@ -427,13 +427,62 @@
                 android:id="@+id/tv200"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="200+"
+                android:text="@string/_200"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 app:layout_constraintBottom_toBottomOf="@+id/tv0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv150"
                 app:layout_constraintTop_toTopOf="@+id/tv0" />
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/labelIQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSecondary"
+                app:strokeWidth="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/numeroAQI"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintVertical_bias="0"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorPrimary"
+                    android:text="Bueno"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="2dp"
+                    android:gravity="center"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <SeekBar
+                android:id="@+id/aqiSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:max="200"
+                android:progress="42"
+                android:enabled="false"
+                android:clickable="false"
+                android:splitTrack="false"
+                android:progressDrawable="@drawable/aqi_progress_track"
+                android:thumb="@drawable/aqi_thumb"
+                android:minHeight="8dp"
+                android:maxHeight="8dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelIQ"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.3"/>
 
 
 
@@ -484,6 +533,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
                     android:paddingVertical="12dp">
 
                     <com.google.android.material.card.MaterialCardView
@@ -515,7 +565,7 @@
                         android:id="@+id/textValueCardPM25"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12"
+                        android:text="@string/_12"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
@@ -529,7 +579,7 @@
                         android:id="@+id/textValueTitlePM25"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PM2.5"
+                        android:text="@string/pm2_5"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="?attr/colorOnSurfaceVariant"
@@ -545,7 +595,7 @@
                         android:id="@+id/textValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="µg/m³"
+                        android:text="@string/g_m"
                         android:textSize="12sp"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         app:layout_constraintStart_toEndOf="@+id/textValueCardPM25"
@@ -580,6 +630,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
                     android:paddingVertical="12dp">
 
                     <com.google.android.material.card.MaterialCardView
@@ -611,7 +662,7 @@
                         android:id="@+id/textValueCardPM10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12"
+                        android:text="@string/_12"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
@@ -625,7 +676,7 @@
                         android:id="@+id/textValueTitlePM10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PM10"
+                        android:text="@string/pm10"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="?attr/colorOnSurfaceVariant"
@@ -641,7 +692,7 @@
                         android:id="@+id/textDescriptionPm10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="µg/m³"
+                        android:text="@string/g_m"
                         android:textSize="12sp"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         app:layout_constraintStart_toEndOf="@+id/textValueCardPM10"
@@ -680,6 +731,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
                     android:paddingVertical="12dp">
 
                     <com.google.android.material.card.MaterialCardView
@@ -711,7 +763,7 @@
                         android:id="@+id/textValueCardo3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12"
+                        android:text="@string/_12"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
@@ -725,7 +777,7 @@
                         android:id="@+id/textValueTitleo3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="O₃"
+                        android:text="@string/o"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="?attr/colorOnSurfaceVariant"
@@ -741,7 +793,7 @@
                         android:id="@+id/textDescriptiono3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ppb"
+                        android:text="@string/ppb"
                         android:textSize="12sp"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         app:layout_constraintStart_toEndOf="@+id/textValueCardo3"
@@ -776,6 +828,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
                     android:paddingVertical="12dp">
 
                     <com.google.android.material.card.MaterialCardView
@@ -807,7 +860,7 @@
                         android:id="@+id/textValueCardNo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12"
+                        android:text="@string/_12"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
@@ -821,7 +874,7 @@
                         android:id="@+id/textValueTitleNo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="NO₂"
+                        android:text="@string/no"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="?attr/colorOnSurfaceVariant"
@@ -837,7 +890,7 @@
                         android:id="@+id/textDescriptionNo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ppb"
+                        android:text="@string/ppb"
                         android:textSize="12sp"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         app:layout_constraintStart_toEndOf="@+id/textValueCardNo2"
@@ -858,7 +911,7 @@
                 android:layout_width="0dp"
                 app:strokeWidth="0dp"
                 app:strokeColor="?attr/colorOutline"
-                android:layout_height="150dp"
+                android:layout_height="140dp"
                 android:layout_marginTop="20dp"
                 app:cardBackgroundColor="?attr/colorSurface"
                 app:layout_constraintTop_toBottomOf="@id/o3Card"
@@ -868,8 +921,81 @@
                 app:layout_constraintVertical_bias="0"
                 android:clickable="true"
                 android:focusable="true"
-                android:contentDescription="@string/recomendaciones"
-                />
+                android:contentDescription="@string/recomendaciones">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="18dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/iconoRe"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintVertical_bias="0"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:strokeWidth="0dp"
+                        android:backgroundTint="?attr/cardElevation">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/shield"
+                            android:padding="6dp"
+                            app:tint="?attr/colorPrimary"
+                            android:contentDescription="@string/icono_de_recomendaci_n"
+                            />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recomendación"
+                        android:textColor="?attr/textAppearanceBody1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iconoRe"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        app:layout_constraintHorizontal_bias="0.05"
+                        app:layout_constraintVertical_bias="0.04"/>
+
+                    <TextView
+                        android:id="@+id/textRe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/air_quality_good"
+                        app:layout_constraintTop_toBottomOf="@+id/iconoRe"
+                        app:layout_constraintStart_toStartOf="@+id/iconoRe"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintVertical_bias="0.2"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:textStyle="normal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ver más detalles"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toBottomOf="@+id/textRe"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="?attr/colorPrimary"
+                        app:layout_constraintVertical_bias="1"
+                        app:layout_constraintHorizontal_bias="0.05"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
 
