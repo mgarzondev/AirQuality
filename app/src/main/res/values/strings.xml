@@ -42,5 +42,8 @@
     <string name="no">NO₂</string>
     <string name="icono_de_recomendaci_n">Icono de recomendación</string>
     <string name="air_quality_good">La calidad del aire es <b>buena</b>. Es un excelente momento para actividades al aire libre.</string>
+    <string name="bueno">Bueno</string>
+    <string name="recomendaci_n">Recomendación</string>
+    <string name="ver_m_s_detalles">Ver más detalles</string>
 
 </resources>
