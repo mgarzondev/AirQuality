@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.application) // Indica que genera un APK y no una libreria
+    alias(libs.plugins.kotlin.android) // Compila código para kotlin
 }
 
 android {
@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.mgarzondev.airquality"
-        minSdk = 24
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -20,6 +20,11 @@ android {
     }
 
     buildTypes {
+
+        debug {
+
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -28,12 +33,13 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
     buildFeatures {
@@ -46,6 +52,11 @@ dependencies {
     // Navegación para Fragmentos
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.okhttp)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
